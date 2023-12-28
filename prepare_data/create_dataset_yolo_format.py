@@ -2,9 +2,12 @@ import os
 import shutil
 
 
-DATA_ALL_DIR = os.path.join('.', 'data_all')
+DATA_ALL_DIR = os.path.join('.', 'download_folder')
 
-DATA_OUT_DIR = os.path.join('.', 'data')
+DATA_OUT_DIR = os.path.join('..', 'data')
+
+if not os.path.exists(DATA_OUT_DIR):
+    os.mkdir(DATA_OUT_DIR)
 
 for set_ in ['train', 'validation', 'test']:
     for dir_ in [os.path.join(DATA_OUT_DIR, set_),
